@@ -140,6 +140,7 @@
 		    -ms-perspective-origin: 50% 50%;
 		        perspective-origin: 50% 50%;
 	}
+
 	.reveal .slides section {
 		visibility: visible !important;
 		position: static !important;
