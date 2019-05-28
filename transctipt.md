@@ -1,11 +1,11 @@
 
 
-Hello, my name is Maria Larchenko.
+Hello, my name is Maria Larchenko.  
 **(Slide 2)**
 CSS Grid is a two dimentional layout system. Unlike flexbox, which is largerly a 1-dimentional system, CSS grid can handle both row
 and column.
- The grid give you a flexible way to change the position of element with only CSS without change to the HTML. 
-**(Slide 3)**
+ The grid give you a flexible way to change the position of element with only CSS without change to the HTML.   
+**(Slide 3)**  
 At that moment grid support in the latest version of all majior browser.
 **(Slide 4)**
 For example I am create the simple layout with header, main, aside, footer sections . 
