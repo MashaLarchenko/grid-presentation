@@ -51,5 +51,5 @@ It have 4 values: start, end, center, stretch(this is the default).
 **Align-self** aligns a grid item inside a cell along the column axis. Also have 4 values: start, end, center, stretch(this is the default).
 To set alignment for all the items in a grid, this behavior can also be set on the grid container via the justify-items property.
 **(Slide 9)**
-##Thank you for attention!
+## Thank you for attention!
 
