@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h1>CSS GRID Basics</h1>
+				<h3>Maria Larchenko</h3></section>
+				<section><p>CSS Grid is two dimentional layout system. Unlike flexbox, which is largerly a 1-dimentional system, CSS grid can handle both row and column. </p>
+				 </section>
+			<section> Grid is  support in the latest version of  all popular browser 
+				<img src="./assets/Support.PNG" alt=""> 
+			</section>
+			<section>
+					<h3>Basic concepts </h3>
+					<ul>
+						<li>Grid-container</li>
+						<li>Grid-item</li>
+						<li>Grid-gap</li>
+						<li>Grid-template-rows</li>
+						<li>Grid-template-column</li>
+						<li>Grid-template-areas</li>
+					</ul>	
+			</section>
+			<section>
+				<section> Create a simple page  with div like grid conteiner. Inside the container there are 4 items. 
+				  <pre>
+	<code>
+	  <body>
+		<div class="wrapper">
+		  <div class="header item"> Header </div>
+		  <div class="main item"> Main </div>
+		  <div class="aside item"> Sidebar </div>
+		  <div class="footer item"> Footer </div>
+		</div>
+	</body>
+	</code>
+			</pre> 
+				
+		</section>
+		<section>
+			<p> To start using Grid you have to define property display: grid. Display property declaring on the container element.
+			</p>
+			<pre >
+			  <code>
+					 
+      .wrapper {
+        display: grid;
+
+      }
+	</code>
+			</pre> 
+		</section>
+		<section>  <img src="./assets/wg.PNG" alt="" > </section>
+		
+</section>
+<section>
+	<section>
+		<p>
+			Next define rows and columns.
+		You can do it using the property grid-template-columns and grid-template-rows.
+		</p>
+		<pre>
+				<code>
+		.wrapper {
+			display: grid;
+			grid-template-columns: 1000px 500px;
+			grid-template-rows: 200px 200px 200px;
+		}
+		
+	</code>
+</pre>
+</section> 
+<section>
+	<pre>
+		  <code>
+				 
+    .wrapper {
+      display: grid;
+      grid-template-columns:  2fr 1fr;
+	    grid-template-rows: 1fr 1fr 1fr;
+	    grid-gap: 20px;
+
+    }
+
+		  </code>
+		</pre> 
+</section>
+<section>
+		<pre>
+			  <code>
+					 
+	  .wrapper {
+	    display: grid;
+	    grid-template-columns: 2fr 1fr;
+	    grid-template-rows: repeat(3, 1fr);
+	    grid-gap: 20px;
+	  }
+	
+			  </code>
+			</pre> 
+	</section>
+		<section><img src="./assets/container.PNG" alt="" ></section>
+		
+	</section>
+	<section>
+			<pre style="width:1000px">
+				  <code>
+						 
+		.wrapper {
+		  display: grid;
+		  grid-template-columns: minmax(600px, 2fr) 1fr;
+		  grid-template-rows: repeat(3, 1fr);
+		  grid-gap: 20px;
+		}
+		
+				  </code>
+				</pre> 
+		</section>
+	<section>
+		<section>
+			<h4>Position Items</h4>
+			<ul>
+					<li>Grid-row-start</li>
+					<li>Grid-row-end</li>
+					<li>Grid-column-start</li>
+					<li>Grid-column-end</li>
+					<li>Grid-row</li>
+					<li>Grid-column</li>
+					<li>Grid-areas</li>
+					<li>Align-self</li>
+					<li>Justify-self</li>
+
+
+				</ul>
+			</section>
+			<section>
+				<pre>
+					  <code >			 
+      .footer {
+        grid-row: 3;
+        grid-column: 1/-1;
+      }
+        
+      .main {
+        grid-column: 1;
+        grid-row: 2;
+      }
+        
+      .header {
+        grid-column: 1/-1;
+        grid-row: 1;
+      }
+        
+      .aside {
+        grid-column:2;
+        grid-row:2;
+      }
+					  </code>
+					</pre> 
+			</section>
+			<section><img src="./assets/withgrid.PNG" alt=""></section>
+					
+			</section>
+			<section>
+					<h4>Grid-template-areas</h4>
+						<pre>
+							  <code>
+									 
+      .wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "header  header"
+        						         "main  aside"
+        						         "footer footer";
+      }
+
+        
+      .footer {
+        grid-area: footer;
+      }
+        
+      .main {
+        grid-area: main;
+      }
+        
+      .header {
+        grid-area: header;
+      }
+        
+      .aside {
+        grid-area: aside;
+      }
+							  </code>
+							</pre> 
+					</section>
+					
+			
+		</section>
+		<section>
+			<section>
+				<h3>Justify-self</h3>
+				<p>Aligns a grid item inside a cell along the row axis </p>
+				<img src="./assets/justify-self.PNG" alt="justify-self">
+			</section>
+			<section>
+				<h3>Align-self</h3>
+				<p>Aligns a grid item inside a cell along the column axis </p>
+				<img src="./assets/align-self.PNG" alt="justify-self">
+			</section>
+		</section>
+		
+
+				
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
